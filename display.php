@@ -10,7 +10,9 @@ if (isset($_POST['password'])) {
     $password = $_POST['password'];
 }
 
-$sql = "SELECT * FROM `cyrustable` WHERE `name`='$username' && `password`='$password' ORDER BY `name`";
+$sql = "SELECT * FROM `cyrustable` ";
+
+//WHERE `name`='$username' && `password`='$password' ORDER BY `name`
 
 $result = $db->query($sql);
 
