@@ -29,14 +29,15 @@ $result = $db->query($sql);
 <body>
 <p><b>Results:</b></p>
 
-<table border="1" cellpadding="5" cellspacing="0">
+<table class="table table-striped" border="1" cellpadding="5" cellspacing="0">
+  <thead>
     <tr style="text-align: left;">
         <th style="width: 100px;">ID</th>
         <th style="width: 150px;">Name</th>
         <th style="width: 150px;">Password</th>
         <th style="width: 200px;">Secrets</th>
     </tr>
-
+	</thead>
     <?php
     
     while ($row = $result->fetch_object()) {
@@ -45,14 +46,14 @@ $result = $db->query($sql);
         $password = htmlentities($row->password, ENT_QUOTES, "UTF-8");
         $secrets = htmlentities($row->secrets, ENT_QUOTES, "UTF-8");
     ?>
-
+<tbody>
     <tr>
         <td><?php echo $id; ?></td>
         <td><?php echo $name; ?></td>
         <td><?php echo $password; ?></td>
         <td><?php echo $secrets; ?></td>
     </tr>
-    
+  </tbody>  
     <?php
     
     }
